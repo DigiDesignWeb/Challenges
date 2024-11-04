@@ -12,10 +12,12 @@ $color-secundary: purple;
 body {
     background-color: $color-primary;
     padding: 5rem 0;
-    font-family:Helvetica;
+    font-family: Helvetica;
 }
 
 .container__recetas {
+    display: grid;
+    grid-template-rows: auto auto auto;
     background-color: white;
     padding: 2.5rem;
     border-radius: 20px;
@@ -34,14 +36,17 @@ h1 {
     margin-bottom: 0;
     font-family: 'Young-serif';
     font-weight: 300;
-    
 
-    &:hover{
+
+    &:hover {
         color: $color-secundary;
     }
 }
 
 .container__recipe {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
     margin: 40px 0;
     background-color: rgba(255, 182, 193, 0.182);
     padding: 1rem 2rem;
@@ -52,8 +57,6 @@ h1 {
 .container__recipe {
     h2 {
         color: purple;
-
-
     }
 }
 
@@ -61,25 +64,48 @@ h3 {
     color: brown;
     font-family: 'outfit';
     font-size: 1.5rem;
-
-    
 }
 
 ul {
-   line-height: 2rem;
+    line-height: 2rem;
 }
 
 ol {
     line-height: 1.5rem;
     font-size: 0.85rem;
- }
+}
+
+@media screen and (max-width:1077px) {
+
+    .container__recipe {
+
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width:685px){
+    h1{
+        font-size: 1.5rem;
+    } 
+    
+    h2{
+        font-size: 1rem;
+    }
+    .container__recipe {
+        padding: 20px;
+    }
+}
 
 @media screen and (max-width:376px) {
 
     body {
         padding: 0px;
         margin: 0;
-
     }
 
     .container__recetas {
@@ -96,8 +122,9 @@ ol {
     }
 
     h1 {
-        padding-top: 1rem;
+        padding-top: 5rem;
         line-height: 1em;
+        font-size: 2.2rem;
     }
 
 }
